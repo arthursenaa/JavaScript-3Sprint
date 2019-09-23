@@ -40,3 +40,17 @@ E:\senai\Senai-DEV2\JS-SPRINT3\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sst
 E:\senai\Senai-DEV2\JS-SPRINT3\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.RazorTargetAssemblyInfo.cache
 E:\senai\Senai-DEV2\JS-SPRINT3\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.dll
 E:\senai\Senai-DEV2\JS-SPRINT3\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.pdb
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\bin\Debug\netcoreapp2.1\Senai.Sstop.WebApi.deps.json
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\bin\Debug\netcoreapp2.1\Senai.Sstop.WebApi.runtimeconfig.json
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\bin\Debug\netcoreapp2.1\Senai.Sstop.WebApi.runtimeconfig.dev.json
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\bin\Debug\netcoreapp2.1\Senai.Sstop.WebApi.dll
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\bin\Debug\netcoreapp2.1\Senai.Sstop.WebApi.pdb
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.csprojAssemblyReference.cache
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.csproj.CoreCompileInputs.cache
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.RazorAssemblyInfo.cache
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.RazorAssemblyInfo.cs
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.AssemblyInfoInputs.cache
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.AssemblyInfo.cs
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.RazorTargetAssemblyInfo.cache
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.dll
+E:\senai\Senai-DEV2\JavaScript-3Sprint\JS-Exercicios\Ex-1Sstop\sstop-base\Senai.Sstop.WebApi\Senai.Sstop.WebApi\obj\Debug\netcoreapp2.1\Senai.Sstop.WebApi.pdb

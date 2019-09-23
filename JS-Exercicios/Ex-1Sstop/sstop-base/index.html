@@ -33,10 +33,25 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">#</th>
-                            <th scope="col">Nome</th>
+                            <th scope="col">Generos</th>
                         </tr>
                     </thead>
                     <tbody id="tabela-lista-corpo"></tbody>
+                </table>
+            </div>
+            <br>
+            <br>
+            <div class="col-12">
+                <table class="table table-hover" id="tabela">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Artistas</th>
+                            <th scope="col">IdEstilo</th>
+
+                        </tr>
+                    </thead>
+                    <tbody id="Artistas"></tbody>
                 </table>
             </div>
         </div>
@@ -44,11 +59,72 @@
 
     <script>
         
-        const nomeEstilo = document.querySelector('.form-control')
-        const btn__cadastrar = document.querySelector('#btnCadastrar');
+        const nomeEstilo = document.querySelector('#nomeEstilo')
+        const btnCadastrar = document.querySelector('#btnCadastrar');
 
+        const artistas = document.querySelector('#Artistas');
+        const lista = document.querySelector('#tabela-lista-corpo');
+
+        //Listar Genero
+        
+        window.onload = function(){
+
+            let url = 'http:localhost:5000/api/Estilos';
+            let generos = [];
+
+            fetch(url)
+                .then(resposta =>  resposta.json())
+                .then(data => listarGenero(data))
+                .catch(erro => console.log(erro));            
+
+            function listarGenero(generos){
+                generos.forEach(element => {
+                    const tr = document.createElement('tr');
+                    const tdid = document.createElement('td');
+                    const tdn = document.createElement('td');
+
+                    tdid.textContent = element.idEstilo;
+                    tdn.textContent = element.nome;
+
+                    tr.appendChild(tdid);
+                    tr.appendChild(tdn);
+                    lista.appendChild(tr);
+                })
+            }
+        
+        //Fim Genero
+        //Artistas
+            
+
+            let url2 = 'http:localhost:5000/api/Artistas';
+            let artistas = [];
+                
+
+            fetch(url2)
+                .then(respostas =>  respostas.json())
+                .then(data => listarArtistas (data))
+                .catch(erro => console.log(erro));            
+
+            function listarArtistas(artistas){
+                artistas.forEach(element => {
+                    const t = document.createElement('tr');
+                    const tdId = document.createElement('td');
+                    const tdArtista = document.createElement('td');
+                    const tdEstilo= document.createElement('td');
+
+                    tdId.textContent = element.IdArtista;
+                    tdArtista.textContent = element.Nome;
+                    tdEstilo.textContent= element.EstiloId;
+
+                    t.appendChild(tdId);
+                    t.appendChild(tdArtista);
+                    t.appendChild(tdEstilo);
+                    lista.appendChild(t);
+                })
+            }
+        }
+//Fim Artistas
         btnCadastrar.addEventListener('click',function(event){
-            event.preventDefault();
 
             let Json = {
                 Nome: nomeEstilo.value
@@ -56,21 +132,30 @@
 
             console.log(Json);
 
-            let xrh = new XMLHttpRequest();
+            let xhr = new XMLHttpRequest();
 
-            xrh.onload = function(){
-                if(xrh.readyState == 4 && xrh.status == 200){
-                    document.querySelector("#btnCadastrar").disabled = false;
+            xhr.onload = function(){
+                if(xhr.readyState == 4 && xhr.status == 200){
                     console.log('Ok');
                 }else{
                     console.log('Error');
                 }
             }
 
-            xrh.open('Post','http:localhost:5000/api/Estilos',true);
-            xrh.setRequestHeader('Content-Type','application/json; charset=utf8');
-            xrh.send(JSON.stringify(Json));
+            xhr.open('Post','http:localhost:5000/api/Estilos',true);
+            xhr.setRequestHeader('Content-Type','application/json; charset=utf8');
+            xhr.send(JSON.stringify(Json));
         });
+
+        nomeEstilo.addEventListener('input',function(){
+            if(nomeEstilo.value.Length <= 4){
+                alert('Seu estilo e menor do que 4 caracteres, digite mais.')
+
+                btnCadastrar.disabled = true;
+            }else{
+                btnCadastrar.disable = false;
+            }
+        })
         
     </script>
 </body>
