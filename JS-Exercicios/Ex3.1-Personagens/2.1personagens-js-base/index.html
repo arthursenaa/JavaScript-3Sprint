@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicio</title>
+</head>
+<body>
+    
+</body>
+</html>
+<head>
+
+    <title>Exercícios</title>
+
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <script>
+        let personagens = [{
+            nome: "Capitão Cometa",
+            dataAparicao: 1951,
+            editora: "DC"
+        }, {
+            nome: "Lanterna Verde",
+            dataAparicao: 1940,
+            editora: "DC"
+        }, {
+            nome: "Ciborgue",
+            dataAparicao: 1980,
+            editora: "DC"
+        }, {
+            nome: "Homem Aranha",
+            dataAparicao: 1962,
+            editora: "Marvel"
+        }, {
+            nome: "Homem de Ferro",
+            dataAparicao: 1963,
+            editora: "Marvel"
+        }, {
+            nome: "Capitão América",
+            dataAparicao: 1940,
+            editora: "Marvel"
+        }];
+
+//Somente Marvel
+        let Marvel = personagens.filter(element =>{
+            return element.editora == "Marvel";
+        }) 
+        console.log(Marvel);
+//Listar Somente depois de 1950
+        let PorData = personagens.filter(element =>{
+            return element.dataAparicao >= 1950;
+        });
+        console.log(PorData);
+//Somente Nome
+        let NomeP = personagens.map(element =>{
+            return element.nome;
+        });
+        console.log("Nome:",NomeP)
+//ADicionar Personagem
+        personagens.push({
+            nome: "Capitã Marvel",
+            dataAparicao: 1977,
+            editora: "Marvel"
+        });
+        console.log(personagens);
+//Quantidade de personagens da marvel
+        console.log("Quantidade de personagens Marvel :", Marvel.length);
+//Extra 1
+        let SomaIdade = 0;
+        let Idade = 0;
+            let IdadeTotal = personagens.map(element =>{
+                Idade = 2019 - element.dataAparicao;
+                return SomaIdade = SomaIdade + Idade;
+            });           
+        console.log("Soma das idades dos personagens:",SomaIdade)
+//Extra 2
+        console.log("------Persoganem    /     Idade-------")
+        let name;
+        for(let i= 0; i< personagens.length; i++){   
+            let IdadeP = 0;        
+            IdadeP = 2019 - personagens[i].dataAparicao;
+            name = personagens[i].nome;
+            console.log(name,"           Idade: ",IdadeP);
+        }
+    </script>
+
+</body>
+
+</html>
