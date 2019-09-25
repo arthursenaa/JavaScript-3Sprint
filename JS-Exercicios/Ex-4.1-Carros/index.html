@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Carro</title>
+</head>
+<body>
+    <main>
+        <label for="Carro"> Escolha Uma Marca</label>
+        <select name="Marca" id="Marcas" onchange="TabelaDeMarca()">
+            <!-- <option id="MMM" value="">aaa</option> -->
+            <!-- <option id="MMM" value=""></option>
+            <option id="MMM" value=""></option>
+             -->
+        </select>
+    </main>
+    <script>
+        const NomeMarca = document.querySelector('#Marcas');
+        // const mmm = document.querySelector('#MMM');
+
+    window.onload = function(){
+
+        let url = 'https://parallelum.com.br/fipe/api/v1/carros/marcas';
+        let marcas = [];
+
+        fetch(url)
+            .then(resposta =>  resposta.json())
+            .then(data => ListaDeMarca(data))
+            .catch(erro => console.log(erro));            
+
+        var Nome
+        function ListaDeMarca(marcas){
+            marcas.forEach(element => {               
+                console.log(element.nome);
+                
+                const elemento = document.createElement('option');
+                elemento.textContent = element.nome;
+                elemento.value = element.codigo;
+
+                NomeMarca.appendChild(elemento);
+                //NomeMarca = nome
+                
+            });
+        }
+    }
+    //Trazer codigo
+    //Retornar Tabela 
+    
+
+    function TabelaDeMarca(NomeMarca){
+        console.log()
+    }
+    </script>
+</body>
+</html>

@@ -86,11 +86,13 @@
             });           
         console.log("Soma das idades dos personagens:",SomaIdade)
 //Extra 2
-        console.log("------Persoganem    /     Idade-------")
+        now = new Date;
+
+        console.log("------  Persoganem     /     Idade  -------")
         let name;
         for(let i= 0; i< personagens.length; i++){   
             let IdadeP = 0;        
-            IdadeP = 2019 - personagens[i].dataAparicao;
+            IdadeP = Number(now.getFullYear()) - personagens[i].dataAparicao;
             name = personagens[i].nome;
             console.log(name,"           Idade: ",IdadeP);
         }

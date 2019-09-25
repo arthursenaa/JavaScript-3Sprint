@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/*---------NAV---------*/
+.section-container {
+    margin: 0 auto;
+    max-width: 1360px;
+}
+
+nav a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 0.4em 2em;
+}
+nav ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.3em;
+    list-style-type: none;
+}
+nav {
+    background-color: black;
+}
