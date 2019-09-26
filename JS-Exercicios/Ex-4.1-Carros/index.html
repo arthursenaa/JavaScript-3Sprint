@@ -9,15 +9,16 @@
 <body>
     <main>
         <label for="Carro"> Escolha Uma Marca</label>
-        <select name="Marca" id="Marcas" onchange="TabelaDeMarca()">
-            <!-- <option id="MMM" value="">aaa</option> -->
-            <!-- <option id="MMM" value=""></option>
-            <option id="MMM" value=""></option>
-             -->
-        </select>
-    </main>
-    <script>
-        const NomeMarca = document.querySelector('#Marcas');
+        <select name="Marca" id="Marcas"  onchange="TabelaDeMarca()">
+                <!-- <option id="MMM" value=null>Escolha Uma Marca</option> -->
+                <!-- <option id="MMM" value=""></option>
+                    <option id="MMM" value=""></option>
+                -->
+            </select>
+        </main>
+        <script>
+            const NomeMarca = document.querySelector('#Marcas');
+            let CodigoDaTabela;
         // const mmm = document.querySelector('#MMM');
 
     window.onload = function(){
@@ -33,11 +34,12 @@
         var Nome
         function ListaDeMarca(marcas){
             marcas.forEach(element => {               
-                console.log(element.nome);
+                //console.log(element.nome);
                 
                 const elemento = document.createElement('option');
                 elemento.textContent = element.nome;
                 elemento.value = element.codigo;
+                CodigoDaTabela = element.codigo;
 
                 NomeMarca.appendChild(elemento);
                 //NomeMarca = nome
@@ -47,10 +49,17 @@
     }
     //Trazer codigo
     //Retornar Tabela 
-    
+    let urlist = ('https://parallelum.com.br/fipe/api/v1/carros/marcas/'+CodigoDaTabela+'/modelos');
+
+    // quando o select for alterado, ele tem um evento
+    // coloca o evento de change nele
+    // this.value
 
     function TabelaDeMarca(NomeMarca){
-        console.log()
+        // let codigo = NomeMarca;
+        // CodigoDaTabela = this.codigo;
+        console.log(CodigoDaTabela)
+        console.log(urlist)
     }
     </script>
 </body>
