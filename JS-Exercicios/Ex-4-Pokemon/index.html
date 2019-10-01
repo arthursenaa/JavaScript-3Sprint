@@ -21,7 +21,9 @@
         </nav>
     </header>
     <main>
-        <div id="BuscarPokemon">
+        <input id="pokemon" type="text">
+        <button type="submit" id="buscar">Buscar</button>
+        <!-- <div id="BuscarPokemon">
                 <h3>Buscar Pokemon</h3>
                 <input type="text" id="nomeEstilo" class="form-control" placeholder="Nome do Pokemon" aria-label="nome" aria-describedby="basic-addon1" />
                 <input class="btn btn-primary" type="submit" value="Buscar" id="btnCadastrar" />
@@ -45,34 +47,47 @@
                     <tbody id="tabela-lista-corpo"></tbody>
                 </table>
             </div>
-    </main>
+    </main> -->
     <script>
-        const tabela = document.querySelector('#tabela-lista-corpo');
+        // const tabela = document.querySelector('#tabela-lista-corpo');
+        const input = document.querySelector("#pokemon");
+        const button = document.querySelector("#buscar");
 
+        button.addEventListener('click',function(event){
+            event.preventDefault();
+            console.log(input.value);
 
-        window.onload = function(){
-
-            let url = 'https://pokeapi.co/';
-
-            fetch(url)
+            fetch('https://pokeapi.co/api/v2/pokemon/' + input.value)
                 .then(resposta =>  resposta.json())
                 .then(data => BuscadorDePokemon(data))
-                .catch(erro => console.log(erro));            
+                .catch(erro => console.log(erro));  
+        });
 
-            function BuscadorDePokemon(pokemon){
+
+
+        // window.onload = function(){
+
+        //     let url = 'https://pokeapi.co/';
+
+        //     fetch(url)
+        //         .then(resposta =>  resposta.json())
+        //         .then(data => BuscadorDePokemon(data))
+        //         .catch(erro => console.log(erro));            
+
+        //     function BuscadorDePokemon(pokemon){
         
-                pokemon.forEach(element => {
-                    const tr = document.createElement('tr');
-                    const td_id = document.createElement('td');
-                    const td_nome = document.createElement('td');
+        //         pokemon.forEach(element => {
+        //             const tr = document.createElement('tr');
+        //             const td_id = document.createElement('td');
+        //             const td_nome = document.createElement('td');
 
-                    td_nome.textContent = element.nome;
+        //             td_nome.textContent = element.nome;
 
-                    tr.appendChild(td_id);
-                    tr.appendChild(td_nome);
-                    tabela.appendChild(tr);
-                })
-            }
+        //             tr.appendChild(td_id);
+        //             tr.appendChild(td_nome);
+        //             tabela.appendChild(tr);
+        //         })
+        //     }
         }
 
     </script>
