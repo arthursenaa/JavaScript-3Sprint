@@ -30,28 +30,24 @@ class App extends Component {
     this.setState({ cep: event.target.value })
   }
 
-
   buscarPorCep = (event) => {
     event.preventDefault();
-
-    // let url = ("viacep.com.br/ws/"+cep+"/json/")
-    //console.log(url)
 
     Axios.get('http://viacep.com.br/ws/' + this.state.cep + '/json/')
 
       .then(response => {
         if (response.status === 200) {
-          //console.log(response.data)
+          //console.log(response.data.logradouro)
           // this.props.history.push('/viacep');
           this.setState({
-            cep: response.cep,
-            logradouro: response.logradouro,
-            complemento: response.complemento,
-            bairro: response.bairro,
-            localidade: response.localidade,
-            uf: response.uf,
-            unidade: response.unidade,
-            ibge: response.ibge,
+            cep: this.state.cep,
+            logradouro: response.data.logradouro,
+            complemento: response.data.complemento,
+            bairro: response.data.bairro,
+            localidade: response.data.localidade,
+            uf: response.data.uf,
+            unidade: response.data.unidade,
+            ibge: response.data.ibge,
             gia: response.data.gia,
           })
           console.log(this.state)
@@ -63,23 +59,6 @@ class App extends Component {
         this.setState({ erro: "CEP Não Encontrado" });
         console.log(erro);
       });
-    // Axios.get("viacep.com.br/ws//json/", {
-    //   cep: this.state.cep
-    // })
-    //   .then(data => {
-    //     if (data.status === 200) {
-    //       localStorage.setItem("link");
-    //       this.props.history.push('/Listar');
-    //     } else {
-    //       console.log("Erroooo")
-    //     }
-    //   })
-    //   .catch(erro => {
-    //     this.setState({ erro: "CEP Não Encontrado" });
-    //     console.log(erro);
-    //   })
-
-    //   console.log(url)
   };
 
   render() {
@@ -103,44 +82,24 @@ class App extends Component {
               {this.state.erro}
             </p>
           </div>
-          {/* <main className="conteudoPrincipal"> */}
-          <table id="tabela-lista">
-            <thead>
-              <tr>
-                <th>CEP</th>
-                <th>Logradouro</th>
-                <th>Complemento</th>
-                <th>Bairro</th>
-                <th>Localidade</th>
-                <th>UF</th>
-                <th>Unidade</th>
-                <th>IBGE</th>
-                <th>GIA</th>
-              </tr>
-            </thead>
-
-            {/* <tbody>
-                {this.state.lista.map(element => {
-                  // return (
-                    <tr key={element.cep}>
-                      <td>{element.logradouro}</td>
-                      <td>{element.complemento}</td>
-                      <td>{element.bairro}</td>
-                      <td>{element.localidade}</td>
-                      <td>{element.uf}</td>
-                      <td>{element.unidade}</td>
-                      <td>{element.ibge}</td>
-                      <td>{element.gia}</td>
-                    </tr>
-                  // );
-                })}
-              </tbody> */}
-          </table>
-          {/* </main> */}
+          <br>
+          </br>
+          <div className="container" id="conteudoPrincipal-lista" 
+          style={{textAlign: 'right' }}>
+            <h5>CEP : {this.state.cep}</h5>
+            <h5>Logradouro : {this.state.logradouro}</h5>
+            <h5>Complemento : {this.state.complemento}</h5>
+            <h5>Bairro : {this.state.bairro}</h5>
+            <h5>Localidade : {this.state.localidade}</h5>
+            <h5>UF : {this.state.uf}</h5>
+            <h5>Unidade : {this.state.unidade}</h5>
+            <h5>IBGE : {this.state.ibge}</h5>
+            <h5>GIA : {this.state.gia}</h5>
+ 
+          </div>          
         </header>
-
-        {/* <Rodape /> */}
-      </div>
+        {/* <Rodape /> */ }
+      </div >
     );
   }
 }
